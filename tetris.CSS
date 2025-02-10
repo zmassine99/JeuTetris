@@ -1,72 +1,85 @@
-/* Global Styles */
-* {
-  box-sizing: border-box;
+/* Général */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-}
-
-body {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: white;
-  font-family: Arial, sans-serif;
+  align-items: flex-start;
+  height: 100vh;
 }
 
-#game-container {
-  position: relative;
-  text-align: center;
-  display: inline-block;
+/* Conteneur global pour le jeu */
+#conteneur-jeu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 20px;
 }
 
-canvas {
-  border: 2px solid black;
-  background-color: #f0f0f0;
-}
-
-/* Level Panel Styling */
-#level-panel {
-  position: absolute;
-  top: 10px;
-  left: -120px;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
-  background-color: #ddd;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Score Panel Styling */
-#score-panel {
-  position: absolute;
-  top: 50px;
-  left: -120px;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
-  background-color: #ddd;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-#replay-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#game-over {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: red;
-  background: rgba(0, 0, 0, 0.8);
+/* Partie gauche : Informations (Titre, Score, Niveau) */
+#panneau-infos {
+  flex: 0;
   padding: 10px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 3px;
+  text-align: center;
+  width: 300px; /* Correction de la largeur */
+  height: 300px; /* Correction de la hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#panneau-titre {
+  color: red;
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+#score-niveau {
+  background-color: #f7f7f7;
+  padding: 15px;
   border-radius: 10px;
+}
+
+#score, #niveau {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Partie droite : Grille de jeu et bouton */
+#panneau-jeu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#tetris {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton Recommencer */
+#bouton-rejouer {
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #FF5733;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#bouton-rejouer:hover {
+  background-color: #e74c3c;
 }

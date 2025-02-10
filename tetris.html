@@ -3,17 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tetris</title>
+    <title>Jeu Tetris</title>
     <link rel="stylesheet" href="tetris.css" />
   </head>
   <body>
-    <div id="game-container">
-      <div id="level-panel">Niveau: <span id="level-value">1</span></div>
-      <div id="score-panel">Score: <span id="score-value">0</span></div>
-      <canvas id="tetris" width="300" height="600"></canvas>
-      <button id="replay-button" onclick="startGame()">Recommencer</button>
-      <div id="game-over">Game Over</div>
+    <div id="conteneur-jeu">
+      <div id="panneau-infos">
+        <div id="panneau-titre">Jeu Tetris</div>
+        <div id="panneau-niveau">Niveau: <span id="valeur-niveau">1</span></div>
+        <div id="panneau-score">Score: <span id="valeur-score">0</span></div>
+      </div>
+      <div id="panneau-jeu">
+        <canvas id="tetris" width="300" height="660"></canvas>
+        <button id="bouton-rejouer" onclick="demarrerJeu()">Recommencer</button>
+      </div>
     </div>
+
     <script src="tetris.js"></script>
   </body>
 </html>
