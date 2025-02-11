@@ -1,7 +1,7 @@
 /* Général */
 body {
   font-family: Arial, sans-serif;
-  background-color: ghostwhite;
+  background-color: #f0f4f8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,24 +16,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px; /* Réduit l'écart entre le panneau infos et le jeu */
+  gap: 20px;
   width: 60%;
-  max-width: 300px; /* Ajusté pour éviter un trop grand écart */
-  margin-top: 20px; /* Réduit l'écart avec le haut */
-  margin-bottom: 20px; /* Réduit l'écart avec le bas */
+  max-width: 300px;
+  margin: 20px 0; /* Combine margin-top et margin-bottom */
 }
+
 
 /* Partie gauche : Informations (Titre, Score, Niveau) */
 #panneau-infos {
+
   flex: 1;
   padding: 20px;
-  background: linear-gradient(145deg, #fff, #f0f0f0);
+  background: linear-gradient(150deg, #f0e8f5, #b6c9e7);
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   text-align: left;
-  width: 250px;
-  margin-top: -300px; /* Pousse un peu plus bas le panneau d'informations */
+  width: 300px;
+  margin-top: -200px; 
+  margin-left: 10px;
+  margin-right: -80px;
 }
+
 
 #infos {
   font-size: 50px;
