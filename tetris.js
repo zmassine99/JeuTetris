@@ -1,6 +1,6 @@
 // Sélection du canevas et du contexte de dessin
-const canvas = document.getElementById('tetris');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("tetris");
+const ctx = canvas.getContext("2d");
 
 // Définition des constantes de la grille
 const tailleBloc = 30;
@@ -14,14 +14,15 @@ let jeuEnCours = true;
 
 // Définition des différentes pièces et de leurs couleurs
 const pieces = [
-  { forme: [[1, 1, 1, 1]], couleur: 'cyan' }, // I
-  { forme: [[1, 1], [1, 1]], couleur: 'yellow' }, // O
-  { forme: [[0, 1, 0], [1, 1, 1]], couleur: 'purple' }, // T
-  { forme: [[1, 0, 0], [1, 1, 1]], couleur: 'orange' }, // L
-  { forme: [[0, 0, 1], [1, 1, 1]], couleur: 'blue' }, // J
-  { forme: [[1, 1, 0], [0, 1, 1]], couleur: 'green' }, // S
-  { forme: [[0, 1, 1], [1, 1, 0]], couleur: 'red' } // Z
+  { forme: [[1, 1, 1, 1]], couleur: "#AFEEEE" }, // I
+  { forme: [[1, 1], [1, 1]], couleur: "#FFFF00" }, // O
+  { forme: [[0, 1, 0], [1, 1, 1]], couleur: "#8A2BE2" }, // T
+  { forme: [[1, 0, 0], [1, 1, 1]], couleur: "#FFA500" }, // L
+  { forme: [[0, 0, 1], [1, 1, 1]], couleur: "#0000FF" }, // J
+  { forme: [[1, 1, 0], [0, 1, 1]], couleur: "#FF0000" }, // S
+  { forme: [[0, 1, 1], [1, 1, 0]], couleur: "#00FF00" } // Z
 ];
+
 
 // Initialisation de la grille de jeu
 function initialiserGrille() {
@@ -122,9 +123,9 @@ function supprimerLignes() {
   mettreAJourScore();
 }
 
-// Mettre à jour l'affichage du score
+// Mettre à jour l"affichage du score
 function mettreAJourScore() {
-  document.getElementById('valeur-score').textContent = score;
+  document.getElementById("valeur-score").textContent = score;
 }
 
 // Vérifier les collisions
@@ -145,25 +146,25 @@ function detecterCollision() {
 }
 
 // Gestion des entrées clavier
-document.addEventListener('keydown', (event) => {
+document.addEventListener("keydown", (event) => {
   if (!jeuEnCours) return;
 
   switch (event.key) {
-    case 'ArrowLeft':
+    case "ArrowLeft":
       pieceActuelle.x--;
       if (detecterCollision()) pieceActuelle.x++;
       break;
 
-    case 'ArrowRight':
+    case "ArrowRight":
       pieceActuelle.x++;
       if (detecterCollision()) pieceActuelle.x--;
       break;
 
-    case 'ArrowDown':
+    case "ArrowDown":
       deplacerPieceBas();
       break;
 
-    case 'ArrowUp':
+    case "ArrowUp":
       tournerPiece();
       break;
   }
@@ -172,7 +173,7 @@ document.addEventListener('keydown', (event) => {
 // Terminer le jeu
 function terminerJeu() {
   jeuEnCours = false;
-  alert('Game Over!');
+  alert("Game Over!");
 }
 
 // Démarrer le jeu
