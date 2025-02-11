@@ -6,78 +6,96 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+  align-items: center; /* Centre verticalement */
+  min-height: 100vh; /* Assure que la page occupe toute la hauteur */
 }
 
 /* Conteneur global pour le jeu */
 #conteneur-jeu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  width: 90%;
-  max-width: 1200px;
-  margin-top: 20px;
+  gap: 20px; /* Réduit l'écart entre le panneau infos et le jeu */
+  width: 60%;
+  max-width: 300px; /* Ajusté pour éviter un trop grand écart */
+  margin-top: 20px; /* Réduit l'écart avec le haut */
+  margin-bottom: 20px; /* Réduit l'écart avec le bas */
 }
 
 /* Partie gauche : Informations (Titre, Score, Niveau) */
 #panneau-infos {
-  flex: 0;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-right: 3px;
-  text-align: center;
-  width: 300px; /* Correction de la largeur */
-  height: 300px; /* Correction de la hauteur */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
+  padding: 20px;
+  background: linear-gradient(145deg, #fff, #f0f0f0);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 250px;
+  margin-top: -300px; /* Pousse un peu plus bas le panneau d'informations */
 }
 
-#panneau-titre {
-  color: red;
-  font-size: 24px;
-  margin: 0 0 10px 0;
+#infos {
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+  
 
+
+
+/* Fond gris clair pour le score et le niveau */
 #score-niveau {
   background-color: #f7f7f7;
-  padding: 15px;
+  padding: 12px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-#score, #niveau {
+#panneau-score, #panneau-niveau {
   font-size: 18px;
+  color : black;
   margin: 5px 0;
 }
 
-/* Partie droite : Grille de jeu et bouton */
+#panneau-score span, #panneau-niveau span {
+  font-weight: bold;
+  color: #FF5733;
+}
+
+
+/* Partie droite : Grille de jeu */
 #panneau-jeu {
   flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  margin-right : 100px
 }
 
 #tetris {
   background-color: white;
   border: 2px solid black;
+  width: 300px;
+  height: 600px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 /* Bouton Recommencer */
 #bouton-rejouer {
   margin-top: 15px;
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-size: 18px;
   background-color: #FF5733;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 #bouton-rejouer:hover {
