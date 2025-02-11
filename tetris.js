@@ -14,7 +14,7 @@ let jeuEnCours = true;
 
 // Définition des différentes pièces et de leurs couleurs
 const pieces = [
-  { forme: [[1, 1, 1, 1]], couleur: "#AFEEEE" }, // I
+  { forme: [[1, 1, 1, 1]], couleur: "cyan" }, // I
   { forme: [[1, 1], [1, 1]], couleur: "#FFFF00" }, // O
   { forme: [[0, 1, 0], [1, 1, 1]], couleur: "#8A2BE2" }, // T
   { forme: [[1, 0, 0], [1, 1, 1]], couleur: "#FFA500" }, // L
@@ -89,6 +89,24 @@ function deplacerPieceBas() {
     genererPiece();
   }
 }
+
+// Tourner la pièce actuelle
+function tournerPiece() {
+  const formeTournee = pieceActuelle.forme[0].map((_, index) =>
+    pieceActuelle.forme.map(row => row[index])
+  ).reverse();
+
+  // Mettre à jour la forme de la pièce avec la forme tournée
+  const ancienneForme = pieceActuelle.forme;
+  pieceActuelle.forme = formeTournee;
+
+  // Vérifier si la pièce après rotation entre en collision
+  if (detecterCollision()) {
+    // Si collision, remettre la forme originale
+    pieceActuelle.forme = ancienneForme;
+  }
+}
+
 
 // Poser la pièce sur la grille
 function poserPiece() {
