@@ -11,6 +11,9 @@ let grille;
 let pieceActuelle;
 let score = 0;
 let jeuEnCours = true;
+let niveau = 1;
+let VitesseChute = 700;
+
 
 // Définition des différentes pièces et de leurs couleurs
 const pieces = [
@@ -128,7 +131,7 @@ function poserPiece() {
   supprimerLignes();
 }
 
-// Supprimer les lignes complètes
+// Supprimer les lignes et mettre à jour le score
 function supprimerLignes() {
   grille = grille.filter(ligne => ligne.some(cellule => cellule === null));
   const lignesEffacees = lignes - grille.length;
@@ -137,13 +140,22 @@ function supprimerLignes() {
     grille.unshift(Array(colonnes).fill(null));
   }
 
-  score += lignesEffacees * 100;
-  mettreAJourScore();
+// Ajouter le score
+score += lignesEffacees * 200;
+mettreAJourScore();
+
+// Vérifier si le score a atteint un multiple de 1000 pour passer au niveau suivant
+if (score >= niveau * 1000) {
+  niveau++;
+  vitesseChute = Math.max(200, vitesseChute - 100); // Réduire le temps (accélérer le jeu)
+  alert("Niveau " + niveau);
 }
 
-// Mettre à jour l"affichage du score
+}
+// Mettre à jour l'affichage du score et du niveau
 function mettreAJourScore() {
   document.getElementById("valeur-score").textContent = score;
+  document.getElementById("valeur-niveau").textContent = niveau;
 }
 
 // Vérifier les collisions
@@ -198,6 +210,8 @@ function terminerJeu() {
 function demarrerJeu() {
   jeuEnCours = true;
   score = 0;
+  niveau = 1;  // Réinitialiser le niveau
+  vitesseChute = VitesseChute;  // Réinitialiser la vitesse
   mettreAJourScore();
   initialiserGrille();
   genererPiece();
@@ -212,7 +226,7 @@ function boucleDeJeu() {
   dessinerPiece();
   deplacerPieceBas();
 
-  setTimeout(boucleDeJeu, 500);
+  setTimeout(boucleDeJeu, vitesseChute);
 }
 
 demarrerJeu();

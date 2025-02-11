@@ -34,17 +34,17 @@ body {
   text-align: left;
   width: 300px;
   margin-top: -200px; 
-  margin-left: 10px;
+  margin-left: 30px;
   margin-right: -80px;
 }
 
 
 #infos {
   font-size: 50px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0.3, 0.7);
 }
   
 
