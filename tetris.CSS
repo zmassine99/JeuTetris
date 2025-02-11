@@ -2,13 +2,14 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
-  align-items: center; /* Centre verticalement */
-  min-height: 100vh; /* Assure que la page occupe toute la hauteur */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
 
 /* Conteneur global pour le jeu */
 #conteneur-jeu {
