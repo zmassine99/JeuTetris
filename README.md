@@ -49,3 +49,5 @@ Projet réalisé dans le cadre d'un exercice personnel de développement en Java
 * **Zineb Massine** _alias_ [@zmassine99](https://github.com/zmassine99)
 * **Sarah Makhloufi** _alias_ [@sarahmakhloufi](https://github.com/SarahMakhloufi)
 
+[![](https://img.shields.io/badge/back%20to%20top-%E2%86%A9-blue)](#shortcuts)
+
