@@ -54,6 +54,10 @@ function genererPiece() {
     x: Math.floor(colonnes / 2) - Math.floor(forme[0].length / 2),
     y: 0
   };
+
+  if (detecterCollision()) {
+    terminerJeu();
+  }
 }
 
 // Dessiner la pièce actuelle
@@ -97,7 +101,7 @@ function poserPiece() {
         const x = pieceActuelle.x + col;
         const y = pieceActuelle.y + ligne;
 
-        if (y < 0) {
+        if (y < 0) { // Arrêt si une pièce touche le haut
           terminerJeu();
           return;
         }
@@ -144,6 +148,23 @@ function detecterCollision() {
   return false;
 }
 
+// Fonction pour tourner la pièce
+function tournerPiece() {
+  const ancienneForme = pieceActuelle.forme;
+
+  // Rotation : transpose + inversion horizontale
+  const nouvelleForme = pieceActuelle.forme[0].map((_, i) =>
+    pieceActuelle.forme.map(row => row[i]).reverse()
+  );
+
+  pieceActuelle.forme = nouvelleForme;
+
+  // Si la rotation cause une collision ou une sortie, annuler
+  if (detecterCollision()) {
+    pieceActuelle.forme = ancienneForme;
+  }
+}
+
 // Gestion des entrées clavier
 document.addEventListener('keydown', (event) => {
   if (!jeuEnCours) return;
@@ -169,10 +190,23 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// Afficher "Game Over" sur le canevas
+function afficherGameOver() {
+  ctx.fillStyle = 'black';
+  ctx.globalAlpha = 0.7;
+  ctx.fillRect(0, canvas.height / 2 - 50, canvas.width, 100);
+
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = 'white';
+  ctx.font = '30px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2);
+}
+
 // Terminer le jeu
 function terminerJeu() {
   jeuEnCours = false;
-  alert('Game Over!');
+  afficherGameOver();
 }
 
 // Démarrer le jeu
@@ -196,4 +230,5 @@ function boucleDeJeu() {
   setTimeout(boucleDeJeu, 500);
 }
 
-demarrerJeu();
+// Démarrer le jeu automatiquement après le chargement de la page
+window.onload = demarrerJeu;
