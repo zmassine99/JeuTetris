@@ -1,6 +1,6 @@
 // Sélection du canevas et du contexte de dessin
-const canvas = document.getElementById('tetris');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("tetris");
+const ctx = canvas.getContext("2d");
 
 // Définition des constantes de la grille
 const tailleBloc = 30;
@@ -11,17 +11,21 @@ let grille;
 let pieceActuelle;
 let score = 0;
 let jeuEnCours = true;
+let niveau = 1;
+let VitesseChute = 700;
+
 
 // Définition des différentes pièces et de leurs couleurs
 const pieces = [
-  { forme: [[1, 1, 1, 1]], couleur: 'cyan' }, // I
-  { forme: [[1, 1], [1, 1]], couleur: 'yellow' }, // O
-  { forme: [[0, 1, 0], [1, 1, 1]], couleur: 'purple' }, // T
-  { forme: [[1, 0, 0], [1, 1, 1]], couleur: 'orange' }, // L
-  { forme: [[0, 0, 1], [1, 1, 1]], couleur: 'blue' }, // J
-  { forme: [[1, 1, 0], [0, 1, 1]], couleur: 'green' }, // S
-  { forme: [[0, 1, 1], [1, 1, 0]], couleur: 'red' } // Z
+  { forme: [[1, 1, 1, 1]], couleur: "cyan" }, // I
+  { forme: [[1, 1], [1, 1]], couleur: "#FFFF00" }, // O
+  { forme: [[0, 1, 0], [1, 1, 1]], couleur: "#8A2BE2" }, // T
+  { forme: [[1, 0, 0], [1, 1, 1]], couleur: "#FFA500" }, // L
+  { forme: [[0, 0, 1], [1, 1, 1]], couleur: "#0000FF" }, // J
+  { forme: [[1, 1, 0], [0, 1, 1]], couleur: "#FF0000" }, // S
+  { forme: [[0, 1, 1], [1, 1, 0]], couleur: "#00FF00" } // Z
 ];
+
 
 // Initialisation de la grille de jeu
 function initialiserGrille() {
@@ -55,8 +59,11 @@ function genererPiece() {
     y: 0
   };
 
-  if (detecterCollision()) {
+  // Vérifier si la nouvelle pièce générée peut être placée et terminer le jeu si ce n'est pas le cas
+
+  if (detecterCollision()){
     terminerJeu();
+    return;
   }
 }
 
@@ -93,6 +100,24 @@ function deplacerPieceBas() {
   }
 }
 
+// Tourner la pièce actuelle
+function tournerPiece() {
+  const formeTournee = pieceActuelle.forme[0].map((_, index) =>
+    pieceActuelle.forme.map(row => row[index])
+  ).reverse();
+
+  // Mettre à jour la forme de la pièce avec la forme tournée
+  const ancienneForme = pieceActuelle.forme;
+  pieceActuelle.forme = formeTournee;
+
+  // Vérifier si la pièce après rotation entre en collision
+  if (detecterCollision()) {
+    // Si collision, remettre la forme originale
+    pieceActuelle.forme = ancienneForme;
+  }
+}
+
+
 // Poser la pièce sur la grille
 function poserPiece() {
   for (let ligne = 0; ligne < pieceActuelle.forme.length; ligne++) {
@@ -101,7 +126,7 @@ function poserPiece() {
         const x = pieceActuelle.x + col;
         const y = pieceActuelle.y + ligne;
 
-        if (y < 0) { // Arrêt si une pièce touche le haut
+        if (y < 0) {
           terminerJeu();
           return;
         }
@@ -113,7 +138,7 @@ function poserPiece() {
   supprimerLignes();
 }
 
-// Supprimer les lignes complètes
+// Supprimer les lignes et mettre à jour le score
 function supprimerLignes() {
   grille = grille.filter(ligne => ligne.some(cellule => cellule === null));
   const lignesEffacees = lignes - grille.length;
@@ -122,13 +147,22 @@ function supprimerLignes() {
     grille.unshift(Array(colonnes).fill(null));
   }
 
-  score += lignesEffacees * 100;
-  mettreAJourScore();
+// Ajouter le score
+score += lignesEffacees * 200;
+mettreAJourScore();
+
+// Vérifier si le score a atteint un multiple de 1000 pour passer au niveau suivant
+if (score >= niveau * 1000) {
+  niveau++;
+  vitesseChute = Math.max(200, vitesseChute - 100); // Réduire le temps (accélérer le jeu)
+  alert("Niveau " + niveau);
 }
 
-// Mettre à jour l'affichage du score
+}
+// Mettre à jour l'affichage du score et du niveau
 function mettreAJourScore() {
-  document.getElementById('valeur-score').textContent = score;
+  document.getElementById("valeur-score").textContent = score;
+  document.getElementById("valeur-niveau").textContent = niveau;
 }
 
 // Vérifier les collisions
@@ -148,47 +182,37 @@ function detecterCollision() {
   return false;
 }
 
-// Fonction pour tourner la pièce
-function tournerPiece() {
-  const ancienneForme = pieceActuelle.forme;
-
-  // Rotation : transpose + inversion horizontale
-  const nouvelleForme = pieceActuelle.forme[0].map((_, i) =>
-    pieceActuelle.forme.map(row => row[i]).reverse()
-  );
-
-  pieceActuelle.forme = nouvelleForme;
-
-  // Si la rotation cause une collision ou une sortie, annuler
-  if (detecterCollision()) {
-    pieceActuelle.forme = ancienneForme;
-  }
-}
-
 // Gestion des entrées clavier
-document.addEventListener('keydown', (event) => {
-  if (!jeuEnCours) return;
+document.addEventListener("keydown", (event) => {
+  if (!jeuEnCours) return; // Cela empeche de bouger les pieces apres un game Over
 
-  switch (event.key) {
-    case 'ArrowLeft':
+  switch (event.key) { // Dependemment de quelle touche pressee: Programmation Evenementielle
+    case "ArrowLeft":
       pieceActuelle.x--;
-      if (detecterCollision()) pieceActuelle.x++;
+      if (detecterCollision()) pieceActuelle.x++; // En cas de collision, on annule le mouvement vers la gauche
       break;
 
-    case 'ArrowRight':
+    case "ArrowRight":
       pieceActuelle.x++;
       if (detecterCollision()) pieceActuelle.x--;
       break;
 
-    case 'ArrowDown':
-      deplacerPieceBas();
+    case "ArrowDown":
+      deplacerPieceBas(); // On a deja defini une fonction pour la gestion du déplacement vers le bas qui fait appel a poser piece et generer une nouvelle piece
       break;
 
-    case 'ArrowUp':
-      tournerPiece();
+    case "ArrowUp":
+      tournerPiece(); // On a defini une fonction qui gere la rotation des pieces avec map et reverse
       break;
   }
 });
+
+// Terminer le jeu
+function terminerJeu() {
+  jeuEnCours = false;
+  //alert("Game Over!");
+  afficherGameOver();
+}
 
 // Afficher "Game Over" sur le canevas
 function afficherGameOver() {
@@ -203,16 +227,12 @@ function afficherGameOver() {
   ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2);
 }
 
-// Terminer le jeu
-function terminerJeu() {
-  jeuEnCours = false;
-  afficherGameOver();
-}
-
 // Démarrer le jeu
 function demarrerJeu() {
   jeuEnCours = true;
   score = 0;
+  niveau = 1;  // Réinitialiser le niveau
+  vitesseChute = VitesseChute;  // Réinitialiser la vitesse
   mettreAJourScore();
   initialiserGrille();
   genererPiece();
@@ -227,8 +247,7 @@ function boucleDeJeu() {
   dessinerPiece();
   deplacerPieceBas();
 
-  setTimeout(boucleDeJeu, 500);
+  setTimeout(boucleDeJeu, vitesseChute);
 }
 
-// Démarrer le jeu automatiquement après le chargement de la page
-window.onload = demarrerJeu;
+demarrerJeu();
