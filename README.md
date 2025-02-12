@@ -45,6 +45,6 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 ## Auteur ✍️
 
 Projet réalisé dans le cadre d'un exercice personnel de développement en JavaScript.
-* **Zineb Massine** _alias_ [@zmassine99] et mettre le lien
+* **Zineb Massine** _alias_ [@zmassine99](lien)
 * **Sarah Makhloufi** _alias_ [@sarahmakhloufi](lien)
 
