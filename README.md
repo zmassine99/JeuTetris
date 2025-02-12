@@ -1,4 +1,11 @@
 # Tetris - Jeu en JavaScript 🎮
+
+<div align="center">
+  <a href="https://www.tetris.com/play-tetris" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Tetris_Screenshot.png" alt="Jeu Tetris" style="max-width: 100%;" width="600" height="315">
+  </a>
+</div>
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?logo=css3&logoColor=white)
 
 ## Description
@@ -19,7 +26,7 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 
 - **HTML5** : Structure de la page et du canevas.
 - **CSS3** : Mise en style du jeu et des éléments visuels. 🎨
-- **JavaScript ** : Logique de gestion du jeu, des mouvements et des interactions. 🔧
+- **JavaScript** : Logique de gestion du jeu, des mouvements et des interactions. 🔧
 
 ## Structure du projet 📂
 
