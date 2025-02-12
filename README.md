@@ -1,4 +1,4 @@
-# Tetris - Jeu en JavaScript 🎮
+# Tetris - Jeu en JavaScript 🎮{#tetris---jeu-en-javascript}
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?logo=css3&logoColor=white)
 
 ## Description
@@ -50,3 +50,4 @@ Projet réalisé dans le cadre d'un exercice personnel de développement en Java
 * **Sarah Makhloufi** _alias_ [@sarahmakhloufi](https://github.com/SarahMakhloufi)
 
 [![](https://img.shields.io/badge/back%20to%20top-%E2%86%A9-blue)](#tetris---jeu-en-javascript)
+
