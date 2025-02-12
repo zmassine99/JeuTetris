@@ -187,11 +187,8 @@ document.addEventListener("keydown", (event) => {
 
   if (!jeuEnCours) return; // Cela empeche de bouger les pieces apres un game Over
 
+
   switch (event.key) { // Dependemment de quelle touche pressee: Programmation Evenementielle
-
-  if (!jeuEnCours) return;
-
-  switch (event.key) {
 
     case "ArrowLeft":
       pieceActuelle.x--;
@@ -204,19 +201,17 @@ document.addEventListener("keydown", (event) => {
       break;
 
     case "ArrowDown":
-
       deplacerPieceBas(); // On a deja defini une fonction pour la gestion du déplacement vers le bas qui fait appel a poser piece et generer une nouvelle piece
       break;
 
     case "ArrowUp":
       tournerPiece(); // On a defini une fonction qui gere la rotation des pieces avec map et reverse
-
-      deplacerPieceBas();
+      
       break;
 
-  }
-}
-});
+
+  }}
+);
 
 // Terminer le jeu
 function terminerJeu() {
@@ -247,7 +242,7 @@ function demarrerJeu() {
   jeuEnCours = true;
   score = 0;
   niveau = 1;  // Réinitialiser le niveau
-  vitesseChute = VitesseChute;  // Réinitialiser la vitesse
+ vitesseChute= VitesseChute;  // Réinitialiser la vitesse
   mettreAJourScore();
   initialiserGrille();
   genererPiece();
