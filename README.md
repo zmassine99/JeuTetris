@@ -28,6 +28,12 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 
 ## Structure du projet 📂
 
+- **index.html**            # Page d'accueil du jeu
+- **/css**
+  - **tetris.css**           # Styles principaux du jeu
+- **/js**
+  - **tetris.js**            # Logique JavaScript du jeu
+- **README.md**             # Documentation du projet
 
 
 ## Installation et exécution 🚀
