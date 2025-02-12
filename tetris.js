@@ -214,11 +214,8 @@ document.addEventListener("keydown", (event) => {
       deplacerPieceBas();
       break;
 
-    case "ArrowUp":
-      tournerPiece();
-
-      break;
   }
+}
 });
 
 // Terminer le jeu
