@@ -184,15 +184,15 @@ function detecterCollision() {
 
 // Gestion des entrées clavier
 document.addEventListener("keydown", (event) => {
-<<<<<<< HEAD
+
   if (!jeuEnCours) return; // Cela empeche de bouger les pieces apres un game Over
 
   switch (event.key) { // Dependemment de quelle touche pressee: Programmation Evenementielle
-=======
+
   if (!jeuEnCours) return;
 
   switch (event.key) {
->>>>>>> f56789bbe92324a656a0bb3b85c9660f23f78697
+
     case "ArrowLeft":
       pieceActuelle.x--;
       if (detecterCollision()) pieceActuelle.x++; // En cas de collision, on annule le mouvement vers la gauche
@@ -204,19 +204,19 @@ document.addEventListener("keydown", (event) => {
       break;
 
     case "ArrowDown":
-<<<<<<< HEAD
+
       deplacerPieceBas(); // On a deja defini une fonction pour la gestion du déplacement vers le bas qui fait appel a poser piece et generer une nouvelle piece
       break;
 
     case "ArrowUp":
       tournerPiece(); // On a defini une fonction qui gere la rotation des pieces avec map et reverse
-=======
+
       deplacerPieceBas();
       break;
 
     case "ArrowUp":
       tournerPiece();
->>>>>>> f56789bbe92324a656a0bb3b85c9660f23f78697
+
       break;
   }
 });
@@ -224,7 +224,7 @@ document.addEventListener("keydown", (event) => {
 // Terminer le jeu
 function terminerJeu() {
   jeuEnCours = false;
-<<<<<<< HEAD
+
   //alert("Game Over!");
   afficherGameOver();
 }
@@ -240,9 +240,9 @@ function afficherGameOver() {
   ctx.font = '30px Arial';
   ctx.textAlign = 'center';
   ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2);
-=======
+
   alert("Game Over!");
->>>>>>> f56789bbe92324a656a0bb3b85c9660f23f78697
+
 }
 
 // Démarrer le jeu
