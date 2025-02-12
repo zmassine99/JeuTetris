@@ -1,9 +1,8 @@
 # Tetris - Jeu en JavaScript 🎮
-
 <div align="center">
-    <img src="[https://upload.wikimedia.org/wikipedia/commons/6/6f/Tetris_Screenshot.png](https://www.google.fr/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTetris&psig=AOvVaw0d6phdsDUDRiiFvTKRHKzW&ust=1739478641253000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKCLnIb9vosDFQAAAAAdAAAAABAE)" alt="Jeu Tetris" style="max-width: 100%;" width="600" height="315">
-
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Tetris_logo.png" alt="Jeu Tetris" style="max-width: 80%;" width="400" height="210">
 </div>
+
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?logo=css3&logoColor=white)
 
