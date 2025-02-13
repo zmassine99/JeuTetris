@@ -26,8 +26,8 @@ const pieces = [ // Chaque pièce représente un objet avec une clé et une vale
   { forme: [[1, 1, 0], [0, 1, 1]], couleur: "#FF0000" }, // Pièce S
   { forme: [[0, 1, 1], [1, 1, 0]], couleur: "#00FF00" } // Pièce Z
 
-  // forme.length représente le nombre de colonnes occupées par la pièce
-  // forme[0].length représente le nombre de lignes occupées par la pièce
+  // forme.length représente le nombre de lignes occupées par la pièce
+  // forme[0].length représente le nombre de colonnes occupées par la pièce
 ];
 
 
@@ -58,23 +58,23 @@ function genererPiece() {
   const { forme, couleur } = pieces[index]; // Création d'une const: couple forme couleur qui extrait les valeurs de la pièce choisie aléatoirement
 
   pieceActuelle = {
-    forme: forme,
-    couleur: couleur,
-    x: Math.floor(colonnes / 2) - Math.floor(forme[0].length / 2), // centrer la pièce horizontalement
+    forme: forme, // Attribuer la forme de la pièce choisie à la pièce actuelle
+    couleur: couleur, // Attribuer la couleur de la pièce choisie à la pièce actuelle
+    x: Math.floor(colonnes / 2) - Math.floor(forme[0].length / 2), // Centrer la pièce horizontalement
     y: 0 // Placer la pièce en haut de la grille
   };
 
   // Vérifier si la nouvelle pièce générée peut être placée et terminer le jeu si ce n'est pas le cas
 
   if (detecterCollision()){ // Vérifier si la pièce entre en collision dès son apparition
-    terminerJeu(); // Fin de jeu si une pièce ne peut pas être placée
+    terminerJeu(); // Fin de jeu si collision
     return;
   }
 }
 
 // Dessiner la pièce actuelle
 function dessinerPiece() {
-  ctx.fillStyle = pieceActuelle.couleur;
+  ctx.fillStyle = pieceActuelle.couleur; 
   for (let ligne = 0; ligne < pieceActuelle.forme.length; ligne++) {
     for (let col = 0; col < pieceActuelle.forme[ligne].length; col++) { // Boucle imbriquée pour parcourir chaque cellule qui constitue la pièce
       if (pieceActuelle.forme[ligne][col]) { // Condition pour vérifier si le bloc est actif contient 1
@@ -99,7 +99,7 @@ function dessinerPiece() {
 function deplacerPieceBas() {
   pieceActuelle.y++; // Avancer la pièce d'une ligne
   if (detecterCollision()) { // Vérifier si la pièce touche une autre pièce ou le bas de la grille
-    pieceActuelle.y--; // Reculer la pièce si la condition est vérifiée
+    pieceActuelle.y--; // Reculer la pièce d'un pas (vers le haut) si la condition est vérifiée
     poserPiece(); // Pose définitive de la pièce
     genererPiece(); // Génération d'une nouvelle pièce pour continuer le jeu
   }
@@ -113,7 +113,7 @@ function tournerPiece() {
 
   // Mettre à jour la forme de la pièce avec la forme tournée
   const ancienneForme = pieceActuelle.forme; // Sauvegarde de la forme actuelle en cas de collision
-  pieceActuelle.forme = formeTournee; // Application de la nouvelle forme
+  pieceActuelle.forme = formeTournee; // Application de la nouvelle forme sur la nouvelle pièce
 
   // Vérifier si la pièce après rotation entre en collision
   if (detecterCollision()) {
@@ -166,8 +166,8 @@ if (score >= niveau * 1000) {
 }
 // Mettre à jour l'affichage du score et du niveau
 function mettreAJourScore() {
-  document.getElementById("valeur-score").textContent = score;
-  document.getElementById("valeur-niveau").textContent = niveau;
+  document.getElementById("valeur-score").textContent = score; // Met à jour l'affichage du score dans l'élément HTML avec l'ID "valeur-score"
+  document.getElementById("valeur-niveau").textContent = niveau; // Met à jour l'affichage du niveau dans l'élément HTML avec l'ID "valeur-niveau"
 }
 
 // Vérifier les collisions
@@ -213,7 +213,7 @@ document.addEventListener("keydown", (event) => {
       break;
 
     case "ArrowUp":
-      tournerPiece(); // On a defini une fonction qui gere la rotation des pieces avec map et reverse
+      tournerPiece(); // On a defini une fonction qui gere la rotation des pieces avec map et reverse()
       
       break;
 
