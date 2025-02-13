@@ -6,7 +6,7 @@
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?logo=css3&logoColor=white)
 
-## Description
+## Description ℹ️
 
 Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour être simple et intuitif. Le jeu utilise un canevas HTML5 pour l'affichage des pièces et une logique de gestion des mouvements, des collisions, du score et des niveaux. À chaque palier de score, la difficulté augmente, rendant le jeu de plus en plus complexe. 🚀
 
@@ -20,7 +20,7 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 - **Augmentation de la difficulté** : Le niveau augmente à chaque palier de score, rendant les pièces plus rapides. ⚡
 - **Affichage du "Game Over"** : Un message "Game Over" s'affiche lorsque le jeu se termine. 💥
 
-## Technologies utilisées 💻
+## Langages utilisés 💻
 
 - **HTML5** : Structure de la page et du canevas.
 - **CSS3** : Mise en style du jeu et des éléments visuels. 🎨
@@ -28,12 +28,10 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 
 ## Structure du projet 📂
 
-- **index.html**            # Page d'accueil du jeu
-- **/css**
-  - **tetris.css**           # Styles principaux du jeu
-- **/js**
-  - **tetris.js**            # Logique JavaScript du jeu
-- **README.md**             # Documentation du projet
+- **index.html** : Page d'accueil du jeu. 
+- **tetris.css** : Styles principaux du jeu.     
+- **tetris.js** : Logique JavaScript du jeu.
+- **README.md** : Documentation du projet.            
 
 
 ## Installation et exécution 🚀
@@ -46,12 +44,12 @@ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour �
 - **Flèche gauche (←)** : Déplacer la pièce à gauche.
 - **Flèche droite (→)** : Déplacer la pièce à droite.
 - **Flèche bas (↓)** : Accélérer la chute de la pièce.
-- **Flèche haut (↑)** : Tourner la pièce.
+- **Flèche haut (↑)** : Tourner la pièce à 90°.
 
 ## Améliorations possibles 🛠️
 
 - Ajouter un système de prévisualisation de la prochaine pièce.
-- Implémenter un mode multijoueur pour jouer à plusieurs.
+- Implémenter un mode multijoueur pour jouer à plusieurs. 👥
 - Ajouter un système de sauvegarde des scores pour les meilleurs joueurs. 🏆
 
 ## Auteur ✍️
