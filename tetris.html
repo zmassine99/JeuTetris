@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" /> <!-- Définit l'encodage des caracteres en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Permet l'adaptaion aux différents écrans -->
     <title>TETRIS </title>
-    <link rel="stylesheet" href="tetris.css" />
+    <link rel="stylesheet" href="tetris.css" /> <!-- Lien vers le fichier CSS pour styliser le jeu -->
   </head>
   <body>
-    <div id="conteneur-jeu">
+    <div id="conteneur-jeu"> <!-- Conteneur princpal du jeu -->
+      
       <!-- Panneau d'informations -->
-      <div id="panneau-infos">
-        <div id="panneau-titre">
+      <div id="panneau-infos"> 
+        <div id="panneau-titre"> <!-- Titre du jeu -->
           <h1 id="infos">
             <h1 id="infos">
-              <h1 id="infos">
+              <h1 id="infos"> <!-- Affichage du titre en couleur -->
                 
                 <span style="color: #FF0000;">T</span>
                 <span style="color: #FF7F00;">E</span>
@@ -23,22 +24,21 @@
                 <span style="color: #800080;">S</span>
               </h1>
               
-            
           </h1> </div>
-        <div id="score-niveau">
-          <div id="panneau-score">Score : <span id="valeur-score">0</span></div>
-          <div id="panneau-niveau">Niveau : <span id="valeur-niveau">1</span></div>
+        <div id="score-niveau"> <!-- Affichage du score et du niveau -->
+          <div id="panneau-score">Score : <span id="valeur-score">0</span></div> <!-- Score actuel du joueur -->
+          <div id="panneau-niveau">Niveau : <span id="valeur-niveau">1</span></div> <!-- Niveau actuel du joueur -->
         </div>
       </div>
     </div>
 
       <!-- Zone de jeu -->
-      <div id="panneau-jeu">
-        <canvas id="tetris" width="300" height="660"></canvas>
-        <button id="bouton-rejouer" onclick="demarrerJeu()">Recommencer</button>
+      <div id="panneau-jeu"> 
+        <canvas id="tetris" width="300" height="660"></canvas> <!-- Canvas ou s'affiche le jeu -->
+        <button id="bouton-rejouer" onclick="demarrerJeu()">Recommencer</button> <!-- Boutton permettant de relancer une partie -->
       </div>
     </div>
 
-    <script src="tetris.js"></script>
+    <script src="tetris.js"></script> <!-- Fichier JavaScript contenant la logique du jeu -->
   </body>
 </html>
