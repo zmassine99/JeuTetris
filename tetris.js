@@ -16,7 +16,7 @@ let niveau = 1; // Niveau du jeu initialisé à 1
 let VitesseChute = 700; // Temps en millisecondes entre chaque chute de pièce
 
 
-// Définition des différentes pièces et de leurs couleurs et les stocker dans un tableau
+// Définition des différentes pièces et de leurs couleurs et les stocker dans un JSON avec clé et valeur
 const pieces = [ // Chaque pièce représente un objet avec une clé et une valeur correspondante; pour représenter la forme et la couleur de chaque pièce
   { forme: [[1, 1, 1, 1]], couleur: "cyan" }, // Pièce I
   { forme: [[1, 1], [1, 1]], couleur: "#FFFF00" }, // Pièce O
