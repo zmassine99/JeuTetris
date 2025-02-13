@@ -20,6 +20,9 @@
 - **Augmentation de la difficulté** : Le niveau augmente à chaque palier de score, rendant les pièces plus rapides. ⚡
 - **Affichage du "Game Over"** : Un message "Game Over" s'affiche lorsque le jeu se termine. 💥
 
+
+  <img src="https://media1.tenor.com/m/QfYJjl05rA4AAAAC/tetris.gif" width = 400 height= 200  alt="Tetris GIF">
+
 ## Langages utilisés 💻
 
 - **HTML5** : Structure de la page et du canevas.
@@ -57,6 +60,12 @@
 Projet réalisé dans le cadre d'un exercice personnel de développement en JavaScript.
 * **Zineb Massine** _alias_ [@zmassine99](https://github.com/zmassine99)
 * **Sarah Makhloufi** _alias_ [@sarahmakhloufi](https://github.com/SarahMakhloufi)
+
+
+<h3 align="center"><img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> MERCI </h3>  
+
+
+
 
 [![](https://img.shields.io/badge/back%20to%20top-%E2%86%A9-blue)](#Description)
 
