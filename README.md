@@ -6,9 +6,9 @@
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?logo=css3&logoColor=white)
 
-## Description ℹ️
+## Description 
 
-Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour être simple et intuitif. Le jeu utilise un canevas HTML5 pour l'affichage des pièces et une logique de gestion des mouvements, des collisions, du score et des niveaux. À chaque palier de score, la difficulté augmente, rendant le jeu de plus en plus complexe. 🚀
+ℹ️ Ce projet est une implémentation du jeu **Tetris** en JavaScript, conçu pour être simple et intuitif. Le jeu utilise un canevas HTML5 pour l'affichage des pièces et une logique de gestion des mouvements, des collisions, du score et des niveaux. À chaque palier de score, la difficulté augmente, rendant le jeu de plus en plus complexe. 🚀 ℹ️
 
 ## Fonctionnalités 🌟
 
