@@ -1,12 +1,11 @@
-
 /* Général */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
+  font-family: Arial, sans-serif; /* Police simple et lisible */
+  background-color: #f0f4f8; /* Fond clair pour un aspect moderne */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* Permet de centrer verticalement sur toute la hauteur */
   margin: 0;
   padding: 0;
 }
@@ -17,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 20px; /* Espacement entre les panneaux */
   width: 60%;
   max-width: 300px;
   margin: 20px 0; /* Combine margin-top et margin-bottom */
@@ -26,36 +25,32 @@ body {
 
 /* Partie gauche : Informations (Titre, Score, Niveau) */
 #panneau-infos {
-
   flex: 1;
   padding: 20px;
-  background: linear-gradient(150deg, #f0e8f5, #b6c9e7);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(150deg, #f0e8f5, #b6c9e7); /* Dégradé pour un effet esthétique */
+  border-radius: 12px; /* Arrondi des bords */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre pour effet 3D */
   text-align: left;
   width: 300px;
-  margin-top: -200px; 
+  margin-top: -200px; /* Décalage vers le haut */
   margin-left: 30px;
   margin-right: -80px;
 }
 
-
 #infos {
   font-size: 50px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif; /* Police plus moderne */
   letter-spacing: 1px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0.3, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0.3, 0.7); /* Effet d'ombre sur le texte */
 }
   
-
-
 
 /* Fond gris clair pour le score et le niveau */
 #score-niveau {
   background-color: #f7f7f7;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 10px; /* Arrondi des bords */
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -69,7 +64,7 @@ body {
 
 #panneau-score span, #panneau-niveau span {
   font-weight: bold;
-  color: #FF5733;
+  color: #FF5733; /* Couleur vive pour mettre en avant le score et le niveau */
 }
 
 
@@ -79,15 +74,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right : 100px
+  margin-right : 100px; /* Décalage vers la droite */
 }
 
 #tetris {
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid black; /* Bordure noire pour délimiter le jeu */
   width: 300px;
   height: 600px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour effet visuel */
   border-radius: 10px;
 }
 
@@ -96,14 +91,14 @@ body {
   margin-top: 15px;
   padding: 12px 20px;
   font-size: 18px;
-  background-color: #FF5733;
+  background-color: #FF5733; /* Rouge vif pour attirer l'attention */
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Animation fluide au survol */
 }
 
 #bouton-rejouer:hover {
-  background-color: #e74c3c;
+  background-color: #e74c3c; /* Changement de couleur au survol */
 }
